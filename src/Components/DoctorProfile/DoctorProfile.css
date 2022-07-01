@@ -1,0 +1,12 @@
+.doc-card .card.my-2.bg-dark img {
+    width: 100%;
+    height: 212px;
+}
+
+.doc-card p{
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 0px;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
