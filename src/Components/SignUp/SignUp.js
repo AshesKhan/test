@@ -25,40 +25,37 @@ function SignUp() {
   const submitData = async (event) => {
     event.preventDefault();
     const { firstName, lastName, email, password, confirmPassword } = userData;
-    if(firstName && lastName && email && password && confirmPassword ){
-
-   
-
-    const res = fetch(
-      "https://reactproject-ab89c-default-rtdb.firebaseio.com/userDataRecords.json",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application",
-        },
-        body: JSON.stringify({
-          firstName,
-          lastName,
-          email,
-          password,
-          confirmPassword,
-        }),
+    if (firstName && lastName && email && password && confirmPassword) {
+      const res = fetch(
+        "https://reactproject-ab89c-default-rtdb.firebaseio.com/userDataRecords.json",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application",
+          },
+          body: JSON.stringify({
+            firstName,
+            lastName,
+            email,
+            password,
+            confirmPassword,
+          }),
+        }
+      );
+      if (res) {
+        setUserData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          password: "",
+          confirmPassword: "",
+        });
+        alert("Data Stored");
+        navigate("/allapp");
+      } else {
+        alert("plz fill the data");
       }
-    );
-    if (res) {
-      setUserData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-      });
-      alert("Data Stored");
-      navigate.push("/signin");
-    } else {
-      alert("plz fill the data");
     }
-}
   };
 
   const [userErr, setUserErr] = useState(false);
@@ -116,7 +113,7 @@ function SignUp() {
   return (
     <div>
       <div className="signUpForm">
-        <h1>Sign Up</h1>
+        <h1>Booking Appointment</h1>
         <form method="POST" onSubmit={SignUpHandle}>
           <div className="inner-wrap">
             <label>
@@ -196,10 +193,9 @@ function SignUp() {
                 name="Sign Up"
                 onClick={submitData}
               >
-                SignUp
+                Booked
               </button>
             </Link>
-      
           </div>
         </form>
       </div>

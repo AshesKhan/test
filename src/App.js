@@ -1,9 +1,8 @@
 import React from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import Home from './Components/Home/Home';
-import About from './Components/About/About';
-import Contact from './Components/Contact/Contact';
+import AllAppointment from './Components/Home/AllAppointment';
+
 import NavBar from './Components/Navbar/NavBar';
 import './App.css';
 import Dashboard from './Components/NotAccess/Dashboard';
@@ -11,6 +10,7 @@ import Login from './Components/NotAccess/Login';
 import SignUp from './Components/SignUp/SignUp';
 import DoctorProfile from './Components/DoctorProfile/DoctorProfile';
 import DoctorDetail from './Components/DoctorProfile/DoctorDetail';
+import DocDetails from './Components/docDetails/DocDetails';
 
 function App() {
   let isLogged = false
@@ -20,11 +20,11 @@ function App() {
     <BrowserRouter>
     <NavBar />
   <Routes>
-  <Route path="/" element={<Home />} />
-  <Route path='/about' element={<About/>}/>
-  <Route path='/contact' element={<Contact/>}/>
-  <Route path="/signup" element={<SignUp/>} />
+  <Route path="/" element={<DoctorProfile />} />
   <Route path='/doctorprofile' element={<DoctorProfile/>}/>
+  <Route path="/allapp" element={<AllAppointment />} />
+  <Route path="/docdetails" element={<DocDetails/>} />
+  <Route path="/signup" element={<SignUp/>} />
   <Route path='doctorprofile/:id' element={<DoctorDetail/>}/>
   <Route path="/dashboard" element={isLogged ?<Dashboard/> : <Navigate to="/login" replace/>} />
   <Route path="/login" element={<Login/>}/>

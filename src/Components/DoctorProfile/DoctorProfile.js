@@ -110,12 +110,12 @@ function DoctorProfile() {
                 <Link to={`/doctorprofile/${data.id}`}>
                 <img src={data.image} alt=""  />
                   <div className="card-body">
-                      <p>ID : {data.id}</p>
-                      <p>{data.name}</p>
-                      <p>{data.age} Years</p>
-                      <p>{data.speciailty}</p>
-                      <p>{data.email}</p>
-                      <p>{data.fee}</p>
+                  <p>ID : {data.id}</p>
+                        <p>Name : {data.name}</p>
+                        <p>Age : {data.age} Years</p>
+                        <p>Specialist : {data.speciailty}</p>
+                        <p>Email : {data.email}</p>
+                        <p>Fee : {data.fee}</p>
                   </div>
                 </Link>
               </div>
